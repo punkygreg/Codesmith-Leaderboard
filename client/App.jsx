@@ -14,12 +14,12 @@ const App = props => {
         <div className='buttons'>
             <h1 class='header'>CODESMITH LEADERBOARDS</h1>
             <div className='primary'>
-            <button>Mario Kart</button>
-            <button>Ping Pong</button>
-            <button>Super Smash</button>
+            <button className='primaryButt'>Mario Kart</button>
+            <button className='primaryButt'>Ping Pong</button>
+            <button className='primaryButt'>Super Smash</button>
             </div>
             <div className='cards'>
-            <button>Player Cards</button>
+            <button class="primaryButt">Player Cards</button>
             </div>
         </div>
     )
