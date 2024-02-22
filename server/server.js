@@ -14,46 +14,42 @@ app.get('/', (req, res) => {
     return res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
 
-//serve scss file to html
-// app.get('/styles.scss', (req, res) => {
-//   return res.status(200).sendFile(path.join(__dirname, './client/styles.scss'));
-// });
+//get request serves  leaderboard data
 
-// ////////////////////////////////////
-// //player cards req
-// app.get('/cards', (req, res) => {
-//   return res.status(200).sendFile(path.resolve(__dirname, '../pages/PlayerCards.html'));
-// });
+app.get('/', controller.getPlayer, (req, res) => {
+  return res.status(200).send(res.locals.players);
+})
 
-// ////////////////////////////////////
-//Ping Pong page req
-app.get('/pong', (req, res) => {
-  // res.redirect('/pong')
-  return res.status(200).sendFile(path.resolve(__dirname, '../client/pages/PingPong.html'));
-});
+app.post('/addplayer', controller.getPlayer, (req, res) => {
+  return res.status(200).send("Player Added!");
+})
+
+app.patch('/addgame', controller.updateWinLoss , (req, res) => {
+  return res.status(200).send("Players W/L updated!");
+})
 
 
 // ////////////////////////////////////
-//Mario Kart page req
-app.get('/mariokart', (req, res) => {
-  // res.redirect('/mariokart')
-  return res.status(200).sendFile(path.resolve(__dirname, '../client/pages/MarioKart.html'));
-});
-
-
-// ////////////////////////////////////
-// //Super Smash page req
-app.get('/supersmash', (req, res) => {
-  // res.redirect('/supersmash')
-  return res.status(200).sendFile(path.resolve(__dirname, '../client/pages/SuperSmash.html'));
-});
 
 
 // ////////////////////////////////////
 // //404 error handler
-// app.use('*', (req, res) => {
-//     return res.status(404).sendFile(path.join(__dirname, '../404.html'));
-//   });
+app.use('*', (req, res) => {
+    return res.status(404).sendFile(path.join(__dirname, '../404.html'));
+  });
+
+///////
+// global error handler
+app.use((err, req, res, next) => {
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 500,
+    message: { err: 'An error occurred' },
+  };
+  const errorObj = Object.assign({}, defaultErr, err);
+  console.log(errorObj.log);
+  return res.status(errorObj.status).json(errorObj.message);
+});
 
 
 
