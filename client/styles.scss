@@ -22,11 +22,50 @@ body {
   // align-items : center;
   // flex-direction: row;
   display : grid;
-  grid-template-columns : repeat(3,3fr);
+  grid-template-columns : repeat(2,3fr);
   text-align: center;
-  
+  align-items : center;
   font-family: "Micro 5", sans-serif;
   color: #ff1f88;
+  // transition: all 0.5s;
+}
+
+.board{
+  // display: flex;
+  // align-items : center;
+  // flex-direction: row;
+  display : grid;
+  grid-template-columns : repeat(5,3fr);
+  text-align: center;
+  align-items : center;
+  font-family: "Micro 5", sans-serif;
+  margin-bottom: 8px;
+  margin-left: 18px;
+  margin-right: 18px;
+  background: white;
+  color: #ff1f88;
+  font-size: 60px;
+  // transition: all 0.5s;
+  box-shadow:  8px 8px 0px 0px  #3325d3;
+}
+
+.characters{
+  // display: flex;
+  // align-items : center;
+  // flex-direction: row;
+  // border-radius: 15px;
+  display : grid;
+  grid-template-columns : repeat(5,3fr);
+  text-align: center;
+  align-items : center;
+  font-family: "Micro 5", sans-serif;
+  background: white;
+  color: #ff1f88;
+  margin-bottom: 6px;
+  margin-left: 23px;
+  margin-right: 23px;
+  font-size: 45px;
+  box-shadow:  8px 8px 0px 0px  #3325d3;
   // transition: all 0.5s;
 }
 
@@ -36,7 +75,8 @@ body {
   min-width: 200px;
   min-height: 45px;
   transition: all 0.5s;
-  font-size: 55px;
+  font-size: 50px;
+  background: white;
   color: #ff1f88;
   font-family: "Micro 5", sans-serif;
   box-shadow:  8px 8px 0px 0px  #3325d3;

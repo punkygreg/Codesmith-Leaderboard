@@ -26,24 +26,27 @@ app.get('/', (req, res) => {
 // });
 
 // ////////////////////////////////////
-// //Ping Pong page req
-// app.get('/pong', (req, res) => {
-//   return res.status(200).sendFile(path.resolve(__dirname, '../pages/PingPong.html'));
-// });
+//Ping Pong page req
+app.get('/pong', (req, res) => {
+  // res.redirect('/pong')
+  return res.status(200).sendFile(path.resolve(__dirname, '../client/pages/PingPong.html'));
+});
 
 
 // ////////////////////////////////////
-// //Mario Kart page req
-// app.get('/mariokart', (req, res) => {
-//   return res.status(200).sendFile(path.resolve(__dirname, '../pages/MarioKart.html'));
-// });
+//Mario Kart page req
+app.get('/mariokart', (req, res) => {
+  // res.redirect('/mariokart')
+  return res.status(200).sendFile(path.resolve(__dirname, '../client/pages/MarioKart.html'));
+});
 
 
 // ////////////////////////////////////
 // //Super Smash page req
-// app.get('/supersmash', (req, res) => {
-//   return res.status(200).sendFile(path.resolve(__dirname, '../pages/SuperSmash.html'));
-// });
+app.get('/supersmash', (req, res) => {
+  // res.redirect('/supersmash')
+  return res.status(200).sendFile(path.resolve(__dirname, '../client/pages/SuperSmash.html'));
+});
 
 
 // ////////////////////////////////////
