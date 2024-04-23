@@ -1,4 +1,4 @@
-# Guigs-Leaderboard
+# Codesmith-Leaderboard
 
 1. THE GOAL
 
